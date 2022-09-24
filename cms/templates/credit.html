@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Credit Summary</h1>
+  <article class="media content-section">
+  <img class="rounded-circle article-img" src = "{{url_for('static',filename = 'profile_pics/' + current_user.image_file) }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{{url_for('viewuser', username = current_user.username)}}">
+          {{ current_user.username.capitalize() }}
+        </a>
+      </div>
+      <h2>
+        <a class="article-title" href="#">
+          B.Tech
+        </a>
+      </h2>
+      <p class="article-content">
+        Credits Completed so far : {{credit}} 
+        Credits Remaining: {{creditsRemaining}}
+        <p> Register for more courses <a href = "url_for("home")">here</a></p>
+      </p>
+    </div>
+  </article>
+  <div>
+    
+</div>
+
+{% endblock content %}

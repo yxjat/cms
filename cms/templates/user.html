@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="media">
+        
+        <img class="rounded-circle account-img" src="{{image_file}}">
+        <div class="media-body">
+        <h2 class="account-heading">{{user.username.capitalize()}}</h2>
+        <p class="text-secondary">{{user.email}}</p>
+        </div>
+    </div>
+    {% if user.isProf%}
+    <fieldset class = "form-group">
+        <legend class = "border-bottom mb-4">
+            Courses by {{user.username}} - {{posts.total}}
+        </legend>
+    </fieldset>
+      {%for post in posts.items %}
+      <article class="media content-section">
+          <img class="rounded-circle article-img" src = "{{url_for('static',filename = 'profile_pics/' + post.author.image_file) }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="/account">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.date() }}</small>
+            </div>
+            <h2><a class="article-title" href="{{url_for('viewpost', post_id = post.id)}}" >{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    {%else%}
+      <fieldset class = "form-group">
+        <legend class = "border-bottom mb-4">
+            Courses taken by {{user.username}} - {{len}}
+        </legend>
+    </fieldset>
+      {%for course in courses %}
+      <article class="media content-section">
+          
+          <div class="media-body">
+            <div class="article-metadata">
+              <h1>{{course.course}}</h1>
+              <a class="mr-2" href="/users/{{course.teach}}">{{ course.teach }}</a>
+            </div>
+            <div>
+              <p class = "article-content"> Course ID: {{course.course}}
+            <p class="article-content">Credits: {{ course.credit }}</p>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    {%endif%}
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+    {% if page_num %}
+      {% if posts.page == page_num %}
+        <a class="btn btn-info mb-4" href="{{ url_for('viewuser', username=user.username, page=page_num) }}">{{ page_num }}</a>
+      {% else %}
+        <a class="btn btn-outline-info mb-4" href="{{ url_for('viewuser', username=user.username, page=page_num) }}">{{ page_num }}</a>
+      {% endif %}
+    {% else %}
+      ...
+    {% endif %}
+  {% endfor %}
+{% endblock content %}
