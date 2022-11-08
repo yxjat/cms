@@ -1,0 +1,45 @@
+.coursescard{
+    margin-top: 10px;
+   
+   
+    
+}
+.cources{
+    background-color:#F5F5F5;
+    margin-right: 1px; 
+    padding:12px ;
+    border-radius: 5px;
+}
+.homebtn{
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+.homebtn .hbtn{
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.article-metadata0{
+    position: relative;
+    margin-top: 5px;
+}
+.text-muted0{
+position: absolute;
+right: 0px;
+top:2px;
+}
+.article-metadata1{
+    position: relative;
+    margin-top: 5px;
+}
+.text-muted1{
+position: absolute;
+right: 0px;
+top:2px;
+}

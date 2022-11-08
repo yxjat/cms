@@ -14,7 +14,7 @@ from flask_mail import Message
 @app.route('/home')
 def home():
     page = request.args.get('page', 1, type = int)
-    posts = post.query.order_by(post.date_posted.desc()).paginate(page=page, per_page=3)
+    posts = post.query.order_by(post.date_posted.desc()).paginate(page=page, per_page=6)
     return render_template('home.html', posts = posts)
 
 @app.route('/hello')
