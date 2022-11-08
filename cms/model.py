@@ -1,7 +1,9 @@
 from datetime import datetime
 
 from cms import db, login_manager,app
+# User Mixin  to check if login credentials provide is correct
 from flask_login import UserMixin
+#
 from itsdangerous import TimedJSONWebSignatureSerializer as serial
 
 

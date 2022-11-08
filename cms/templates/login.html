@@ -1,7 +1,7 @@
 {%extends "layout.html" %}
 {%block content%}
     <div class = "content-section">
-        <form method="POST" action="">
+        <form method="POST" action="" class="loginform">
             {{form.hidden_tag()}}
             <fieldset class = "form-group">
                 <legend class = "border-bottom mb-4">
@@ -34,20 +34,23 @@
                         {{form.password(class = "form-control form-control-lg")}}
                     {% endif %}
                 </div>
+            <div class="formcenter">
                 <div class="form-check">
                     {{ form.remember(class="form-check-input") }}
                     {{ form.remember.label(class="form-check-label") }}
                 </div>
-            </fieldset>
-            <div class = "form-group">
-                {{form.submit(class= "btn btn-outline-info")}}
+                <div class = "form-group">
+                    {{form.submit(class= "btn btn-outline-info")}}
+                </div>
             </div>
+            </fieldset>
+        
         </form>
     </div>
+    <div class="formb">
     <small class = "text-muted">
         <a href="{{url_for('reset_request')}}">Forgot Password</a>
     </small>
-    <div class="border-top pt-3">
         <small class = "text-muted">
             Need an Account <a class="ml-2" href="{{ url_for('register')}}">SIGN UP NOW</a>
         </small>

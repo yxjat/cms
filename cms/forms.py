@@ -70,7 +70,7 @@ class post_form(FlaskForm):
 
 class conformation_form(FlaskForm):
     
-    confirm = BooleanField('Are you sure you wish to delete this post? This action cannot be undone')
+    confirm = BooleanField('Are you sure you wish to delete this post? This action cannot be undo')
     
     submit = SubmitField('Delete')
 

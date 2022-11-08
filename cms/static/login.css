@@ -1,0 +1,13 @@
+.loginform .form-group,.form-check{
+    margin-top: 15px;
+}
+
+.loginform .formcenter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formb{
+
+}
