@@ -11,6 +11,7 @@
               <a class="mr-2" href="{{url_for('viewuser', username = post.author.username)}}">{{ post.author.username }}</a>
               <small class="text-muted0">{{ post.date_posted.date() }}</small>
             </div>
+            <hr/>
             <h2><a class="article-title" href="{{url_for('viewpost', post_id = post.id)}}" >{{ post.title }}</a></h2>
             <div class="article-metadata1">
             <small class="article-content">{{ post.content }}</small>

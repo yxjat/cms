@@ -8,6 +8,25 @@
   justify-content: center;
   align-items: center;
 }
+.loginform{
+  padding-bottom: 10px;
+}
+.formb .text-muted2{
+margin-top: 5px;
+}
+@media screen and (max-width:987px) {
+  .content-section{
+    width:98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+margin-left: 5px;  }
 .formb{
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formb .text-muted2{
+  margin-top: -5px;
+  }
 }

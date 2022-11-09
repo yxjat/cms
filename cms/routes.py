@@ -148,7 +148,7 @@ def viewuser(username):
     us = user.query.filter_by(username = username).first_or_404()
     image_file = url_for('static', filename= 'profile_pics/' + us.image_file)
     page = request.args.get('page', 1, type=int)
-    user_posts = post.query.filter_by(author=us).order_by(post.date_posted.desc()).paginate(page=page, per_page=5)
+    user_posts = post.query.filter_by(author=us).order_by(post.date_posted.desc()).paginate(page=page, per_page=6)
     user_courses = enrolled.query.filter_by(user_id = us.username).all()
     return render_template('user.html', title = us.username, user = us, image_file = image_file, posts = user_posts,courses = user_courses, len = len(user_courses))
 
