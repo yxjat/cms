@@ -11,7 +11,7 @@ class regform(FlaskForm):
 
     email = StringField('Email',  validators =[DataRequired(),Email() ])
     password = PasswordField('Password', validators=[DataRequired()])
-    confpassword = PasswordField('ConfPassword', validators=[DataRequired(), EqualTo('password')])
+    confpassword = PasswordField('ConfirmPassword', validators=[DataRequired(), EqualTo('password')])
     isProf = BooleanField('Check for course instructors')
     submit = SubmitField('Sign Up')
     
@@ -99,9 +99,9 @@ class enrollment_form(FlaskForm):
     submit = SubmitField('Enrol')
     
 class contactForm(FlaskForm):
-    name = StringField('Enter your name', validators = [DataRequired()])
-    email = StringField('Enter your email address', validators = [DataRequired(),Email()])
-    content = TextAreaField('Your Message', validators = [DataRequired()])
+    name = StringField('Name', validators = [DataRequired()])
+    email = StringField('Email', validators = [DataRequired(),Email()])
+    content = TextAreaField('Message', validators = [DataRequired()])
     submit = SubmitField('Submit')
     
     

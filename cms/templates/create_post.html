@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class = "content-section">
+<div class = "contactform">
     <form method="POST" action="">
         {{form.hidden_tag()}}
         <fieldset class = "form-group">
-            <legend class = "border-bottom mb-4">
-                {{legend}}
+            <legend class = "border-bottom mb-4 mt-2 pt-1">
+                <h1>{{legend}}</h1>
             </legend>
             
-            <div class="form-group">
+            <div class="form-group ">
                 {{form.title.label(class = "form-control-label")}}
                 {% if form.title.errors %}
                     {{form.title(class = "form-control form-control-lg is-invalid")}}
@@ -21,7 +21,7 @@
                     {{form.title(class = "form-control form-control-lg")}}
                 {% endif %}
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 {{form.content.label(class = "form-control-label")}}
                 {% if form.content.errors %}
                     {{form.content(class = "form-control form-control-lg is-invalid")}}
@@ -35,7 +35,7 @@
                 {% endif %}
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-2">
                 {{form.credit.label(class = "form-control-label")}}
                 {% if form.credit.errors %}
                     {{form.credit(class = "form-control form-control-lg is-invalid")}}
@@ -50,7 +50,7 @@
             </div>
             
         </fieldset>
-        <div class = "form-group">
+        <div class = "form-group mt-4 mb-3">
             {{form.submit(class= "btn btn-outline-info")}}
         </div>
     </form>
